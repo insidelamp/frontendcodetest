@@ -1,0 +1,101 @@
+.searchWrapper {
+  width: 97%;
+  height: 13%;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.searchTitle {
+  height: 50%;
+  border-bottom: 1px solid #b1b1b1;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.searchContentsSpace {
+  display: flex;
+  align-items: center;
+  height: 50%;
+}
+.searchContents {
+  width: 13%;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+.searchSelectBox {
+  width: 200px;
+  height: 60%;
+  border-radius: 5px;
+  border: 1px solid red;
+  position: relative;
+}
+.selectBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.selectUlOn {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 56px;
+  left: 0;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: block;
+}
+.selectUlOff {
+  position: absolute;
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: block;
+}
+
+.selectLi {
+  height: 60px;
+  padding: 5px 8px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selectLi:hover {
+  background-color: gray;
+}
+.selectLi:first-child {
+  border-radius: 5px 5px 0px 0px;
+}
+.selectLi:last-child {
+  border-radius: 0px 0px 5px 5px;
+}
+.selectOption {
+  width: 300px;
+  background-color: red;
+}
+.searchInputBox {
+  width: 400px;
+  height: 60%;
+  border-radius: 5px;
+  border: 1px solid blue;
+  margin: 0px 40px;
+}
+.searchBtn {
+  width: 100px;
+  height: 68%;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
