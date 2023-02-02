@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, use } from "react";
 import "../css/search.css";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 
-function search() {
+function search({ selectState, setSelectState, setUserSearch }) {
+  const [writeText, setWriteText] = useState("");
   const selectBoxOption = [
     { value: "전체", id: 1 },
     { value: "상품명", id: 2 },
@@ -10,18 +11,20 @@ function search() {
     { value: "상품내용", id: 4 },
   ];
   const [isOpen, setIsOpen] = useState(false);
-  const [selectState, setSelectState] = useState("전체");
-  const [selectOptions, setSelectOptions] = useState("");
-
   function clickFunc() {
     setIsOpen(!isOpen);
-    console.log(11);
   }
-  const selectOption = (id, value) => {
-    setSelectOptions(id);
+  const selectOption = (value) => {
     setSelectState(value);
   };
-  console.log(isOpen, selectOptions, selectState);
+  const searchFunc = (e) => {
+    setWriteText(e.target.value);
+  };
+  const clickBtn = () => {
+    if (writeText !== "") {
+      setUserSearch(writeText);
+    }
+  };
   return (
     <div className="searchWrapper">
       <div className="searchTitle">상품검색</div>
@@ -37,8 +40,7 @@ function search() {
                     key={option.id}
                     value={option.value}
                     onClick={() => {
-                      selectOption(option.id, option.value), clickFunc();
-                      console.log(option.id, option.value);
+                      selectOption(option.value), clickFunc();
                     }}
                   >
                     {option.value}
@@ -58,8 +60,10 @@ function search() {
           )}
         </div>
 
-        <input className="searchInputBox" />
-        <button className="searchBtn">조회</button>
+        <input className="searchInputBox" onChange={searchFunc} />
+        <button className="searchBtn" onClick={clickBtn}>
+          조회
+        </button>
       </div>
     </div>
   );

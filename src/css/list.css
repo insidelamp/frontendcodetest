@@ -57,7 +57,15 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 0.75em;
-  max-width: 272.5px;
+  max-width: 292px;
+}
+.listDescriptionContentsHidden {
+  width: 15px;
+  padding: 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: -10px;
 }
 .listPrice {
   width: 25%;
